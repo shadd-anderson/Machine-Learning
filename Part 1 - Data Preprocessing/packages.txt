@@ -1,0 +1,6 @@
+*** All packages required to download ***
+numpy
+matplotlib
+pandas
+scikit-learn
+scipy
