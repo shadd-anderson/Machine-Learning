@@ -1,0 +1,9 @@
+Simple linear regression:
+y = mx + b (or y = b1x1 + x0)
+
+Assumptions of a linear regression:
+1. Linearity - it follows a linear correlation
+2. Homoscedasticity - Regular, consistent variance among scatter plots
+3. Multivariate normality - continuous variables follow normal distribution throughout
+4. Independence of errors - points that don't follow the pattern are unique and lacking patterns themselves
+5. Lack of multicollinearity - independent variables are, in fact, independent, and don't affect each other
