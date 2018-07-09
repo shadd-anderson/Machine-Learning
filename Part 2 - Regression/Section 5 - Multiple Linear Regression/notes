@@ -1,5 +1,8 @@
 Simple linear regression:
-y = mx + b (or y = b1x1 + x0)
+y = mx + b (or y = b1x1 + b0)
+
+multiple variance linear regression:
+y = b0 + b1*x1 + b2*x2 + ... + bn*xn
 
 Assumptions of a linear regression:
 1. Linearity - it follows a linear correlation
@@ -7,3 +10,6 @@ Assumptions of a linear regression:
 3. Multivariate normality - continuous variables follow normal distribution throughout
 4. Independence of errors - points that don't follow the pattern are unique and lacking patterns themselves
 5. Lack of multicollinearity - independent variables are, in fact, independent, and don't affect each other
+
+p-values:
+In complete simplicity: the chance that our data set can't be produced randomly based on the current model, or that it was affected by outside factors
