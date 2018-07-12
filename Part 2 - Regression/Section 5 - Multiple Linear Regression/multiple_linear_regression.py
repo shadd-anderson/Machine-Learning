@@ -37,27 +37,46 @@ y_pred = regressor.predict(X_test)
 # Adding constant to the model
 X = np.append(arr=np.ones((50, 1)).astype(int), values=X, axis=1)
 
-# Starting the manual elimination process. Step 1 - Gather all independent variables and set significance level (0.05)
+# # Starting the manual elimination process. Step 1 - Gather all independent variables and set significance level (0.05)
+# X_opt = X[:, [0, 1, 2, 3, 4, 5]]
+# # Step 2 - Fit regressor to model
+# regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+# # Step 3 - Find predictor with highest p-value
+# regressor_OLS.summary()
+# # Step 4 - Remove if above Significance Level (p-value of column 2 was 0.99, way above 0.05)
+# X_opt = X[:, [0, 1, 3, 4, 5]]
+# # Step 5 - re-fit the model and GO AGANE
+# regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+# regressor_OLS.summary()
+# # p-value of 1 was 0.94
+# X_opt = X[:, [0, 3, 4, 5]]
+# regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+# regressor_OLS.summary()
+# # p-value of 4 was 0.602
+# X_opt = X[:, [0, 3, 5]]
+# regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+# regressor_OLS.summary()
+# # p-value of 5 was 0.06
+# X_opt = X[:, [0, 3]]
+# regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+# regressor_OLS.summary()
+# # p-value of 3 is 0.000 - Model is complete
+
+
+# Automatic backward elimination
+def backward_elimination(x, sl):
+    numvars = len(x[0])
+    for i in range(0, numvars):
+        regressor_ols = sm.OLS(y, x).fit()
+        maxvar = max(regressor_ols.pvalues).astype(float)
+        if maxvar > sl:
+            for j in range(0, numvars - i):
+                if regressor_ols.pvalues[j].astype(float) == maxvar:
+                    x = np.delete(x, j, 1)
+    regressor_ols.summary()
+    return x
+
+
+SL = 0.05
 X_opt = X[:, [0, 1, 2, 3, 4, 5]]
-# Step 2 - Fit regressor to model
-regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
-# Step 3 - Find predictor with highest p-value
-regressor_OLS.summary()
-# Step 4 - Remove if above Significance Level (p-value of column 2 was 0.99, way above 0.05)
-X_opt = X[:, [0, 1, 3, 4, 5]]
-# Step 5 - re-fit the model and GO AGANE
-regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
-regressor_OLS.summary()
-# p-value of 1 was 0.94
-X_opt = X[:, [0, 3, 4, 5]]
-regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
-regressor_OLS.summary()
-# p-value of 4 was 0.602
-X_opt = X[:, [0, 3, 5]]
-regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
-regressor_OLS.summary()
-# p-value of 5 was 0.06
-X_opt = X[:, [0, 3]]
-regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
-regressor_OLS.summary()
-# p-value of 3 is 0.000 - Model is complete
+X_Modeled = backward_elimination(X_opt, SL)
