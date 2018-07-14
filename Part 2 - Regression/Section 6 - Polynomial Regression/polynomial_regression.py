@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plot
+import numpy as np
 import pandas as pd
 
 from sklearn.linear_model import LinearRegression
@@ -16,7 +18,25 @@ lin_reg = LinearRegression()
 lin_reg.fit(X, y)
 
 # Fitting polynomial regression
-poly_reg = PolynomialFeatures()
-X_poly = poly_reg.fit_transform(X, y)
+poly_reg = PolynomialFeatures(degree=4)
+X_poly = poly_reg.fit_transform(X)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(X_poly, y)
+
+# Visualizing the linear regression result
+plot.scatter(X, y, color="red")
+plot.plot(X, lin_reg.predict(X), color="blue")
+plot.title("Truth or bluff (Linear Regression)")
+plot.xlabel("Position level")
+plot.ylabel("Salary")
+plot.show()
+
+# Visualizing the polynomial regression result
+X_grid = np.arange(min(X), max(X), 0.1)
+X_grid = X_grid.reshape(len(X_grid), 1)
+plot.scatter(X, y, color="red")
+plot.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)), color="blue")
+plot.title("Truth or bluff (Polynomial Regression)")
+plot.xlabel("Position level")
+plot.ylabel("Salary")
+plot.show()
