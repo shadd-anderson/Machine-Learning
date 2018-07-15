@@ -5,3 +5,4 @@ Code written while taking the [Machine Learning A-Z course](https://www.udemy.co
 * [Part 2 - Regression](../master/Part%202%20-%20Regression) - _Various regression methods to chart related data_
   * [Simple Linear Regression](../master/Part%202%20-%20Regression/Section%204%20-%20Simple%20Linear%20Regression) - _Linear Regression involving salaries vs experience_
   * [Multiple Linear Regression](../master/Part%202%20-%20Regression/Section%205%20-%20Multiple%20Linear%20Regression) - _Linear Regression with multiple independent variables (business profitability)_
+  * [Polynomial Linear Regression](../master/Part%202%20-%20Regression/Section%206%20-%20Polynomial%20Regression) - _Regression with exponentially increasing/decreasing data (Salaries vs Position)_
