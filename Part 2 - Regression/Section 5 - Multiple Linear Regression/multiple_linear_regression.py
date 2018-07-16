@@ -63,16 +63,41 @@ X = np.append(arr=np.ones((50, 1)).astype(int), values=X, axis=1)
 # # p-value of 3 is 0.000 - Model is complete
 
 
-# Automatic backward elimination
+# # Automatic backward elimination
+# def backward_elimination(x, sl):
+#     numvars = len(x[0])
+#     for i in range(0, numvars):
+#         regressor_ols = sm.OLS(y, x).fit()
+#         maxvar = max(regressor_ols.pvalues).astype(float)
+#         if maxvar > sl:
+#             for j in range(0, numvars - i):
+#                 if regressor_ols.pvalues[j].astype(float) == maxvar:
+#                     x = np.delete(x, j, 1)
+#     regressor_ols.summary()
+#     return x
+
+# Automatic backward elimination using adjusted r-squared scores
 def backward_elimination(x, sl):
-    numvars = len(x[0])
-    for i in range(0, numvars):
+    num_vars = len(x[0])
+    temp = np.zeros((50, 6)).astype(int)
+    for i in range(0, num_vars):
         regressor_ols = sm.OLS(y, x).fit()
-        maxvar = max(regressor_ols.pvalues).astype(float)
-        if maxvar > sl:
-            for j in range(0, numvars - i):
-                if regressor_ols.pvalues[j].astype(float) == maxvar:
+        max_var = max(regressor_ols.pvalues).astype(float)
+        adj_r_before = regressor_ols.rsquared_adj.astype(float)
+        if max_var > sl:
+            for j in range(0, num_vars - i):
+                if regressor_ols.pvalues[j].astype(float) == max_var:
+                    temp[:, j] = x[:, j]
                     x = np.delete(x, j, 1)
+                    tmp_regressor = sm.OLS(y, x).fit()
+                    adj_r_after = tmp_regressor.rsquared_adj.astype(float)
+                    if adj_r_before >= adj_r_after:
+                        x_rollback = np.hstack((x, temp[:, [0, j]]))
+                        x_rollback = np.delete(x_rollback, j, 1)
+                        print(regressor_ols.summary())
+                        return x_rollback
+                    else:
+                        continue
     regressor_ols.summary()
     return x
 
