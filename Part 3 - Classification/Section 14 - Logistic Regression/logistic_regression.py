@@ -22,3 +22,8 @@ X_test = sc_X.transform(X_test)
 # Fitting Logistic Regression to training set
 classifier = LogisticRegression()
 classifier.fit(X_train, y_train)
+
+# Predicting the test set results
+y_pred = classifier.predict(X_test)
+
+# Making the confusion matrix
