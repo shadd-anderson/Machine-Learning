@@ -8,3 +8,4 @@ Code written while taking the [Machine Learning A-Z course](https://www.udemy.co
   * [Polynomial Linear Regression](../master/Part%202%20-%20Regression/Section%206%20-%20Polynomial%20Regression) - _Regression with exponentially increasing/decreasing data (Salaries vs Position)_
   * [SVR (Support Vector Regression)](../master/Part%202%20-%20Regression/Section%207%20-%20Support%20Vector%20Regression%20(SVR)) - _Support Vector Regression using Salaries vs Position_
   * [Decision Tree Regresion](../master/Part%202%20-%20Regression/Section%208%20-%20Decision%20Tree%20Regression) - _Decision Tree Regression using Salaries vs Position_
+  * [Random Forest Regression](../master/Part%202%20-%20Regression/Section%209%20-%20Random%20Forest%20Regression) - _Random Forest Regression, esentially a bunch of Decision Tree Regressions, averaged_
