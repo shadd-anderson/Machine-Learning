@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 
 from matplotlib.colors import ListedColormap
-from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -21,9 +20,7 @@ sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 
-# Fitting Logistic Regression to training set
-classifier = LogisticRegression()
-classifier.fit(X_train, y_train)
+# Fitting classifier to training set
 
 # Predicting the test set results
 y_pred = classifier.predict(X_test)
