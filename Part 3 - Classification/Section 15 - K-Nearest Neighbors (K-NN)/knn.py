@@ -6,6 +6,7 @@ import pandas as pd
 from matplotlib.colors import ListedColormap
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 
 matplotlib.use('TkAGG')
@@ -24,6 +25,8 @@ X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 
 # Fitting classifier to training set
+classifier = KNeighborsClassifier()
+classifier.fit(X_train, y_train)
 
 # Predicting the test set results
 y_pred = classifier.predict(X_test)
@@ -48,5 +51,5 @@ def plot_regression_results(x_set, y_set, title):
     plot.show()
 
 
-plot_regression_results(X_train, y_train, "Classifier (Training Set)")
-plot_regression_results(X_test, y_test, "Classifier (Test Set)")
+plot_regression_results(X_train, y_train, "K_NN (Training Set)")
+plot_regression_results(X_test, y_test, "K-NN (Test Set)")
