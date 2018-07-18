@@ -9,3 +9,7 @@ Code written while taking the [Machine Learning A-Z course](https://www.udemy.co
   * [SVR (Support Vector Regression)](../master/Part%202%20-%20Regression/Section%207%20-%20Support%20Vector%20Regression%20(SVR)) - _Support Vector Regression using Salaries vs Position_
   * [Decision Tree Regresion](../master/Part%202%20-%20Regression/Section%208%20-%20Decision%20Tree%20Regression) - _Decision Tree Regression using Salaries vs Position_
   * [Random Forest Regression](../master/Part%202%20-%20Regression/Section%209%20-%20Random%20Forest%20Regression) - _Random Forest Regression, esentially a bunch of Decision Tree Regressions, averaged_
+* [Part 3 - Classification](../master/Part%203%20-%20Classification) - _Classification methods using Social Network users_
+  * [Logistic Regression](../master/Part%203%20-%20Classification/Section%2014%20-%20Logistic%20Regression)
+  * [K-Nearest Neighbors Classifier](../master/Part%203%20-%20Classification/Section%2015%20-%20K-Nearest%20Neighbors%20(K-NN))
+  * [Support Vector Machine (SVM) Classifiers](../master/Part%203%20-%20Classification/Section%2016%20-%20Support%20Vector%20Machine%20(SVM))
