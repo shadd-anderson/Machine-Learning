@@ -25,7 +25,7 @@ X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 
 # Fitting classifier to training set
-classifier = SVC(kernel="linear")
+classifier = SVC(kernel="rbf")
 classifier.fit(X_train, y_train)
 
 # Predicting the test set results
@@ -51,5 +51,5 @@ def plot_regression_results(x_set, y_set, title):
     plot.show()
 
 
-plot_regression_results(X_train, y_train, "SVM Classifier (Training Set)")
-plot_regression_results(X_test, y_test, "SVM Classifier (Test Set)")
+plot_regression_results(X_train, y_train, "Classifier (Training Set)")
+plot_regression_results(X_test, y_test, "Classifier (Test Set)")
