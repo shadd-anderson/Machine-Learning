@@ -4,3 +4,7 @@ matplotlib
 pandas
 scikit-learn
 scipy
+nltk
+Theano
+keras
+Tensorflow
