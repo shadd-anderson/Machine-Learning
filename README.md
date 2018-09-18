@@ -25,7 +25,7 @@ Code written while taking the [Machine Learning A-Z course](https://www.udemy.co
   * [Natural Language Processing](../master/Part%207%20-%20Natural%20Language%20Processing/Section%2036%20-%20Natural%20Language%20Processing)
 * [Part 8 - Deep Learning](../master/Part%208%20-%20Deep%20Learning) - _AKA the fun stuff, self-adjusting models_
   * [Artificial Neural Networks (ANN)](../master/Part%208%20-%20Deep%20Learning/Section%2039%20-%20Artificial%20Neural%20Networks%20(ANN))
-  * [Convolutional Neural Networks (CNN)](../master/Part%208%20-%20Deep%20Learning/Section%2040%20-%20Convolutional%20Neural%20Networks%20(CNN))
+  * [Convolutional Neural Networks (CNN)](../master/Part%208%20-%20Deep%20Learning/Section%2040%20-%20Convolutional%20Neural%20Networks%20(CNN)) - **NOTE:** _Does not contain dataset as it is a large folder of images_
 * [Part 9 - Dimensionality Reduction](../master/Part%209%20-%20Dimensionality%20Reduction) - _Reducing computational necessities by "flattening" data and removing unnecessary variables_
   * [Principle Component Analysis (PCA)](../master/Part%209%20-%20Dimensionality%20Reduction/Section%2043%20-%20Principal%20Component%20Analysis%20(PCA))
   * [Linear Discriminate Analysis (LDA)](../master/Part%209%20-%20Dimensionality%20Reduction/Section%2044%20-%20Linear%20Discriminant%20Analysis%20(LDA))
